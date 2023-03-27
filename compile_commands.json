@@ -1,0 +1,11 @@
+[
+{
+  "directory": "d:\\Cds\\Cxx\\gdAppServer",
+  "arguments": ["D:\\Aps\\VSPF22\\Professional\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/std:c++latest", "/Iinclude", "/ID:\\Cds\\Libs\\coost\\include", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\gdAppServer\\windows\\x64\\release\\main.cxx.obj", "main.cxx"],
+  "file": "main.cxx"
+},
+{
+  "directory": "d:\\Cds\\Cxx\\gdAppServer",
+  "arguments": ["D:\\Aps\\VSPF22\\Professional\\VC\\Tools\\MSVC\\14.35.32215\\bin\\HostX64\\x64\\cl.exe", "/c", "/nologo", "/O2", "/fp:fast", "/std:c++latest", "/Iinclude", "/ID:\\Cds\\Libs\\coost\\include", "/EHsc", "/DNDEBUG", "/Fobuild\\.objs\\gdAppServer\\windows\\x64\\release\\src\\httpServerConf.cxx.obj", "src\\httpServerConf.cxx"],
+  "file": "src\\httpServerConf.cxx"
+}]
