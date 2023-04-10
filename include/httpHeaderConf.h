@@ -18,6 +18,8 @@ namespace gd__ {
         static constexpr char const * kGetLogBySite {"getlogbysite"};
         static constexpr char const * kGetLogByTime {"getlogbytime"};
 
+        static constexpr char const * kIdentify {"identify"};
+
         static constexpr char const * kSuccess {"success"};
         static constexpr char const * kFailed {"failed"};
 
@@ -25,6 +27,7 @@ namespace gd__ {
         static constexpr char const * kPhone {"phone"};
         static constexpr char const * kId {"id"};
         static constexpr char const * kImageSrc {"imagesrc"};
+        static constexpr char const * kImg {"img"};
         static constexpr char const * kSite {"site"};
         static constexpr char const * kTime {"time"};
 

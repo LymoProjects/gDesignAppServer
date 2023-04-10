@@ -1,37 +1,26 @@
 add_rules("mode.debug", "mode.release")
 
-set_languages("c++latest")
+set_languages("c++20")
+
+add_requires(
+    "coost",
+    {configs = {libcurl = true, openssl = true}}
+)
  
 target("gdAppServer")
     set_kind("binary")
+
     add_files(
         "./*.cxx",
         "src/*.cxx"
     )
- 
-    add_syslinks(
-        "Advapi32",
-        "Crypt32",
-        "Wldap32",
-        "User32"
-    )
-
-    add_links(
-        "co",
-        "libcurl",
-        "libssl",
-        "libcrypto"
-    )
 
     add_includedirs(
-        "include",
-        "D:/Cds/Libs/coost/include" -- to include coost headers.,
+        "include"
     )
 
-    add_linkdirs(
-        "D:/Cds/Libs/coost/build/windows/x64/release", -- to find co.lib from coost.
-        "D:/Cds/Libs/curl-7.88.1/build/artifacts/l/libcurl/7.87.0/a2ac3a70b1e948b1843919b4cbb41b7f/lib",
-        "D:/Cds/Libs/openssl-3.0.8/build/artifacts/o/openssl/1.1.1-t/9458079689e342b58f2f2e8d4b2fb860/lib"
+    add_packages(
+        "coost"
     )
 target_end()
 

@@ -11,6 +11,8 @@ namespace gd__ {
         static constexpr char const * userSqlServerUrl {"http://localhost:9191"};
         static constexpr char const * userImgServerUrl {"http://localhost:9193"};
         static constexpr char const * logSqlServerUrl {"http://localhost:9192"};
+        static constexpr char const * identifyServerUrl {"http://localhost:9194"};
+        static constexpr char const * identifyBinServerUrl {"http://localhost:9195"};
 
         static std::map<std::string, std::function<void(http::Req const &, http::Res &)>> methods;
 
@@ -25,6 +27,7 @@ namespace gd__ {
         static void onGetLogByName(http::Req const &, http::Res &);
         static void onGetLogBySite(http::Req const &, http::Res &);
         static void onGetLogByTime(http::Req const &, http::Res &);
+        static void onIdentify(http::Req const &, http::Res &);
 
         static void addSuccessHeader(http::Res &);
         static void addFailedHeader(http::Res &, char const *);

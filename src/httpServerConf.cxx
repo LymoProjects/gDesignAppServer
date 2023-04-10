@@ -24,7 +24,8 @@ namespace gd__ {
         {httpHeaderConf::kInsertLog, onInsertLog},
         {httpHeaderConf::kGetLogByName, onGetLogByName},
         {httpHeaderConf::kGetLogBySite, onGetLogBySite},
-        {httpHeaderConf::kGetLogByTime, onGetLogByTime}
+        {httpHeaderConf::kGetLogByTime, onGetLogByTime},
+        {httpHeaderConf::kIdentify, onIdentify}
     };
 
     void httpServerConf::httpOnReq(http::Req const & req, http::Res & res) {  
@@ -201,6 +202,17 @@ namespace gd__ {
         addResultHeader(res, cli);
 
         res.set_body(cli.body());
+    }
+
+    void httpServerConf::onIdentify(const http::Req & req, http::Res & res) {
+        http::Client cli(identifyServerUrl);
+
+        cli.add_header(httpHeaderConf::kOperation, req.header(httpHeaderConf::kOperation));
+        cli.add_header(httpHeaderConf::kImg, req.header(httpHeaderConf::kImg));
+
+        cli.post("/", "");
+
+        addResultHeader(res, cli);
     }
 
     void httpServerConf::addSuccessHeader(http::Res & res) {
