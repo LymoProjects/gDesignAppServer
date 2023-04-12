@@ -97,12 +97,16 @@ namespace gd__ {
             return;
         }
 
+        std::cout << "preparing to upload img!\n";
+
         http::Client cli(userSqlServerUrl);
 
         cli.add_header(httpHeaderConf::kOperation, req.header(httpHeaderConf::kOperation));
         cli.add_header(httpHeaderConf::kImageSrc, req.header(httpHeaderConf::kImageSrc));
 
         cli.post("/", req.body(), req.body_size());
+
+        std::cout << "uploaded img!\n";
 
         addResultHeader(res, cli);
     }
@@ -132,7 +136,7 @@ namespace gd__ {
         res.set_status(cli.status());
 
         // * add the following header for http client testing.
-        res.add_header("content-type", "image/png");
+        res.add_header("content-type", "image/jpg");
 
         res.set_body(cli.body());
     }
